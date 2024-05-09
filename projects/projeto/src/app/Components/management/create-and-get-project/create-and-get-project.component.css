@@ -1,0 +1,117 @@
+/* Estilos gerais para o formulário */
+.container {
+    max-width: 1200px; /* Limita a largura do formulário */
+    margin: 20px auto; /* Centraliza e adiciona espaço em volta */
+    padding: 20px;
+    background: #fff; /* Fundo branco para o formulário */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave para destaque */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Estilos para os inputs e labels */
+.form-group {
+    margin-bottom: 15px; /* Espaço entre os campos */
+}
+
+input[type="text"], input[type="date"] {
+    width: 100%; /* Largura completa */
+    padding: 10px; /* Padding confortável */
+    border: 1px solid #ccc; /* Borda sutil */
+    border-radius: 4px; /* Bordas ligeiramente arredondadas */
+}
+
+/* Estilização dos labels para serem mais visíveis */
+label {
+    display: block; /* Faz o label aparecer acima do input */
+    margin-bottom: 5px; /* Espaço entre o label e o input */
+    font-weight: bold;
+}
+
+/* Estilos para o botão de submit */
+button[type="submit"] {
+    background-color: #007BFF; /* Cor azul Bootstrap */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Escurecer o botão ao passar o mouse */
+}
+
+/* Mensagens de erro mais visíveis e integradas */
+.errormsg {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+/* Estilos básicos para a tabela */
+.example-container {
+    max-width: 98%; /* Aumenta a largura máxima da tabela */
+    
+    padding: 20px; /* Adiciona um padding para não colar no bordo */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra suave para destacar */
+}
+
+/* Ajusta o cabeçalho e células para uma visualização mais ampla */
+.mat-header-cell, .mat-cell {
+    padding: 16px 24px; /* Mais espaço vertical e horizontal */
+}
+
+/* Células da tabela */
+.mat-cell {
+    color: #666; /* Cor mais suave para o texto */
+    padding: 12px 24px;
+    border-bottom: 1px solid #e0e0e0; /* Linha sutil para separar linhas */
+}
+
+/* Estilo dos botões dentro da tabela para manter a consistência */
+button.mat-button {
+    margin: 4px;
+    line-height: 1.5;
+    color: white;
+    background-color: #007BFF; /* Azul para ação */
+    border-radius: 4px;
+}
+
+button.mat-button:hover {
+    background-color: #0056b3; /* Tom mais escuro no hover */
+}
+
+/* Paginação estilizada para combinar com o estilo geral */
+.mat-paginator {
+    background: transparent;
+    color: #b16262;
+    padding: 10px;
+}
+@media (max-width: 600px) {
+    .mat-form-field {
+        width: 100%;
+    }
+
+    .mat-header-cell, .mat-cell {
+        padding: 8px;
+    }
+}
+/* Estilização do campo de filtro */
+.example-header {
+    padding: 10px 20px; /* Alinhamento e espaçamento adequados */
+    width: 300px; /* Largura definida para o campo de filtro */
+    margin: 0 auto 10px; /* Centraliza e adiciona margem abaixo */
+}
+.mat-form-field {
+    margin-right: 10px; /* Espaço à direita para não colar na borda */
+    width: 300px; /* Largura fixa para o campo de entrada */
+}
+
+input.mat-input-element {
+    padding: 8px;
+    border-radius: 4px; /* Bordas arredondadas para os inputs */
+    border: 1px solid #ccc; /* Borda sutil */
+}

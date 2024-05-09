@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-drawer-container {
+  height: 100%;
+  flex: 1; /* Ajuste para preencher todo o espaço vertical */
+}
+
+mat-drawer {
+  width: 200px; /* Largura ajustada */
+  background: #343a40; /* Cor consistente com a navbar */
+  color: #ffffff; /* Texto branco para contraste */
+}
+/* Estilização da tabela */
+.mat-table {
+  width: 100%;
+  overflow-x: auto; /* Permite scroll horizontal em telas menores */
+}
+
+/* Cabeçalho da tabela com fonte negrito */
+.mat-header-cell {
+  font-weight: bold;
+}
+
+/* Celulas da tabela com padding */
+.mat-cell {
+  padding: 8px;
+  line-height: 1.5; /* Melhora a legibilidade */
+}
+
+/* Paginação estilizada */
+.mat-paginator {
+  background: #f5f5f5; /* Fundo claro para contraste */
+  padding: 10px;
+}
+
+/* Botões de ação na tabela */
+.mat-button {
+  margin: 0;
+  line-height: normal;
+}

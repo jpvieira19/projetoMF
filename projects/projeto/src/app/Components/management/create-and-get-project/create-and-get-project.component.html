@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="create-and-get-project.component.css">
+<mat-drawer-container>
+    
+    <mat-drawer-content id = "content">
+      
+      
+<div class="container">
+    <div [hidden]="submitted">
+        <h1>Create Project</h1>
+        <form #deliveryForm="ngForm"
+            (ngSubmit)="createProject(deliveryForm.value)">
+            <div class="form-group">
+                <label> Project Name</label>
+                <input required #Name="ngModel" type="text" ngModel class="form-control" name="Name"
+                    placeholder="ex: Projeto A" id="Name">
+                <div *ngIf="Name.invalid && Name.touched" class="alert alert-danger"> Name is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Start Date</label>
+                <input required #startDate="ngModel" type="date" ngModel class="form-control" name="startDate"
+                    placeholder="ex: 12/12/2012" id="startDate" onkeydown="return false">
+                <div *ngIf="startDate.invalid && startDate.touched" class="alert alert-danger"> A start date is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="name">End Date</label>
+                <input required #endDate="ngModel" type="date" ngModel class="form-control" name="endDate"
+                    placeholder="ex: 12/12/2012" id="endDate">
+                <div *ngIf="endDate.invalid && endDate.touched" class="alert alert-danger"> A end date is
+                    required
+                </div>
+            </div>
+
+            <button [disabled]="deliveryForm.invalid" type="submit"
+                class="btn btn-outline-dark my-2 my-sm-0" style="margin-top: 500px;" id="submit">Create
+            </button>
+            <br>
+            <label for="name" id="result" [hidden]="!error" class="errormsg">&#9888; {{message}} &#9888;</label>
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <h2>Project created sucessfully!</h2>
+        <table class="table" style="margin-top: 2%;">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td>{{projeto.id}}</td>
+                <td>{{projeto.name}}</td>
+                <td>{{projeto.startDate}}</td>
+                <td>{{projeto.endDate}}</td>
+            </tbody>
+        </table>
+        <button type="reset" class="btn btn-outline-dark my-2 my-sm-0" style="margin-top: 500px;"
+            (click)="submitted = false; deliveryForm.reset()">OK!</button>
+    </div>
+</div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+  
+  <div class="example-container mat-elevation-z8">
+  
+    <mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- Truck Plate Column -->
+      <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b>{{column.header}}</b> </mat-header-cell>
+        <mat-cell *matCellDef="let row"> <span class="long-text"> {{column.cell(row)}} </span></mat-cell>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="deletes">
+        <mat-header-cell *matHeaderCellDef> &nbsp; </mat-header-cell>
+          <mat-cell *matCellDef="let i = index; let row">        
+            <button style="margin: auto;" mat-button>Delete</button>
+          </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'packing-inhibt': row.active == false }">
+      </mat-row>
+    </mat-table>
+  
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+  
+  
+>
